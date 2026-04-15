@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useGitHubRepos } from './hooks/useGitHubRepos';
 import { ProjectCard } from './components/ProjectCard';
-import { motion, AnimatePresence, useScroll, useSpring, useMotionValue, useTransform, useMotionTemplate } from 'framer-motion';
+import { motion, useScroll, useSpring, useMotionValue, useTransform, useMotionTemplate } from 'framer-motion';
 
 // --- COMPONENTES AUXILIARES PREMIUM ---
 
