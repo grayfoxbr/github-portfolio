@@ -95,13 +95,10 @@ export default function Portfolio() {
   const { repos, loading, error } = useGitHubRepos('grayfoxbr');
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
-  const [emailCopied, setEmailCopied] = useState(false);
-  const [activeFilter, setActiveFilter] = useState('Todos');
   const [isLoading, setIsLoading] = useState(true);
   const [isHovering, setIsHovering] = useState(false);
 
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
   const yParallax = useTransform(scrollYProgress, [0, 1], [0, 300]);
 
   // CURSOR COM ZERO LATÊNCIA
@@ -143,12 +140,6 @@ export default function Portfolio() {
       window.removeEventListener('mouseover', handleMouseOver);
     };
   }, [cursorX, cursorY]);
-
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText('joaohenrique@exemplo.com');
-    setEmailCopied(true);
-    setTimeout(() => setEmailCopied(false), 2000);
-  };
 
   const skillsConfig = [
     { title: "Linguagens", items: ['C', 'Java', 'Kotlin', 'Python', 'JavaScript', 'TypeScript'] },
